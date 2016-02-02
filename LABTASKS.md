@@ -68,6 +68,7 @@ questions by editing this file.
 - Currently clicking on "kittens" returns the "page under construction" message. Using the view about.html as a sample, add a page that has a navigation bar. Add an image of your choice to the page (be aware of copyright rules) and a div that describes the image. 
 - Explore bootstrap by changing formatting of the page (for instance, position of the image and text). It doesn't have to look "nice", just different from what it currently is. 
 >We lowercased the navbar on the kittens page, and centered text.
+
 ## Part #3: components, controllers, and modules, oh my!
 
 >Protip: You can blame Jacob for the cheesy part name.
