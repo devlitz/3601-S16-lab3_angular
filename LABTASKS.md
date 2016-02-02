@@ -39,15 +39,26 @@ questions by editing this file.
 ##### Where is the navigation bar included in the source code for index.html? 
 > The first ```<div>``` within the ```<body>```
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
+>```angular.module('stdControllers', [])```
+>```angular.module("mainApp", ['stdControllers'])```
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
+>```app.js``` mediates the conversation between the client and the server (tells what the server does).
+>```public/javascript/app.js``` defines what modules are being used in the client
 ##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart). 
+>added wolves (and made consistent plurality)
 ##### How are new items added and deleted through the web page? (i.e. - What functions from the main controller are used in index.html, and what Angular directives allow them to interact with the view?)
+>```index.html``` uses ```mainControl.addData()```, ```mainControl.removeData($index)```, and ```mainControl.itemsInList()```
+> the angular directive ```mainControl.textField``` allows it to interact with the view
 ##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar? 
+> The purpose of ```navbar.html``` is to reference the ```navbar.controller.js``` to make the navbar. To add links you add to the list in the controller.
 ##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted. 
+> 1st instance: ```role="presentation"```
+> 2nd instance: ```class="btn btn-primary"```
 
 >Protip: Bootstrap is awesome. Start using it. Seriously. This allows you to do fancy things with styling (CSS) with very little effort. Think back to lab 1. http://getbootstrap.com/components/ <- Regular Bootstrap. https://angular-ui.github.io/bootstrap/ <- Angular Bootstrap. These offer separate functionality and both can be used simultaneously.
 
 ##### Stop the server by pressing Ctrl-C in the terminal, type "grunt test" to run tests. Where are the tests located?
+>grunt just runs karma: ```karma.conf.js```
 
 ## Part #2: modifying the project.
 
