@@ -9,9 +9,10 @@
         mainControl.data = [
             {text: "fish"},
             {text: "kittens"},
-            {text: "snake"},
-            {text: "badger"},
-            {text: "puppies"}
+            {text: "snakes"},
+            {text: "badgers"},
+            {text: "puppies"},
+            {text: "wolves"}
         ];
 
         mainControl.addData = function(){
