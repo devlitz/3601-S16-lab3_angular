@@ -5,18 +5,39 @@ questions by editing this file.
 
 ## Part #1: exploring the project.
 
-- Try adding new pets on the index page through the form. Try deleting entries. Observe the results. 
+- Try adding new pets on the index page through the form. Try deleting entries. Observe the results.
+- 
+>We did it! They did what you would expect.
 
 > Protip: You'll need to start up the server before you can play with the website.
 
 - Click links on the navigation bar. See what happens. Note that when you move away from the page with pets, your changes to the list of pets are lost. This is because we are not storing the array in a database (this will be a part of the next lab). 
 - Observe the HTML element's formatting (it's done via bootstrap). As you are working on the questions below, experiment with the project to get a better sense for what each element is. 
+- 
+>Observed.
 
 ##### List all the files at the top level of your project (i.e. not in public) and briefly state the purpose of each one, as you understand it. You might want to postpone describing some files until you work with the project a bit more. 
+>``` .gitignore ``` tells git which files to ignore
+>``` .travis.yml ``` Travis file that tells Travis how to deal with our files
+>``` app.js ``` main server application file
+>``` bower.json ``` information about website
+>``` Gruntfile.js ``` grunt test file
+>``` karma.conf.js ``` karma test file
+>``` LABTASKS.md ``` our tasks
+>``` package.json ``` node information
+>``` README.md ``` the main page for setup (GitHub looks at this)
 ##### List the folders in the public folder and describe the purpose for each.
+>``` assets``` things we want on the page (images right now)
+>``` css``` the css for the pages
+>``` javascript``` the javascript for the pages
+>``` views``` the html pages
 ##### What are the names of the Angular controllers in this web application? What does each of them do?
+>``` main.controller.js```  the data for the main webpage ```public/views/index.html``` (inside the module)
+>``` navbar.controller.js``` the data for the Navbar (inside the module)
 ##### Open the index.html view. What controller(s) is it using? 
+>``` main.controller.js``` and ``` navbar.controller.js```
 ##### Where is the navigation bar included in the source code for index.html? 
+> The first ```<div>``` within the ```<body>```
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
 ##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart). 
