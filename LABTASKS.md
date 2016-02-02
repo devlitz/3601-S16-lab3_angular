@@ -5,28 +5,60 @@ questions by editing this file.
 
 ## Part #1: exploring the project.
 
-- Try adding new pets on the index page through the form. Try deleting entries. Observe the results. 
+- Try adding new pets on the index page through the form. Try deleting entries. Observe the results.
+- 
+>We did it! They did what you would expect.
 
 > Protip: You'll need to start up the server before you can play with the website.
 
 - Click links on the navigation bar. See what happens. Note that when you move away from the page with pets, your changes to the list of pets are lost. This is because we are not storing the array in a database (this will be a part of the next lab). 
 - Observe the HTML element's formatting (it's done via bootstrap). As you are working on the questions below, experiment with the project to get a better sense for what each element is. 
+- 
+>Observed.
 
 ##### List all the files at the top level of your project (i.e. not in public) and briefly state the purpose of each one, as you understand it. You might want to postpone describing some files until you work with the project a bit more. 
+>``` .gitignore ``` tells git which files to ignore
+>``` .travis.yml ``` Travis file that tells Travis how to deal with our files
+>``` app.js ``` main server application file
+>``` bower.json ``` information about website
+>``` Gruntfile.js ``` grunt test file
+>``` karma.conf.js ``` karma test file
+>``` LABTASKS.md ``` our tasks
+>``` package.json ``` node information
+>``` README.md ``` the main page for setup (GitHub looks at this)
 ##### List the folders in the public folder and describe the purpose for each.
+>``` assets``` things we want on the page (images right now)
+>``` css``` the css for the pages
+>``` javascript``` the javascript for the pages
+>``` views``` the html pages
 ##### What are the names of the Angular controllers in this web application? What does each of them do?
+>``` main.controller.js```  the data for the main webpage ```public/views/index.html``` (inside the module)
+>``` navbar.controller.js``` the data for the Navbar (inside the module)
 ##### Open the index.html view. What controller(s) is it using? 
+>``` main.controller.js``` and ``` navbar.controller.js```
 ##### Where is the navigation bar included in the source code for index.html? 
+> The first ```<div>``` within the ```<body>```
 ##### app.js within public/javascript is where your Angular modules are located at. What modules does the project currently have?
+>```angular.module('stdControllers', [])```
+>```angular.module("mainApp", ['stdControllers'])```
 ##### Notice, the code controlling the Node.js server is in a file also called app.js. There is no particular reason for this other than a generator we will use later on follows the same convention. Explain the difference between the purpose of the files (think client vs server).
+>```app.js``` mediates the conversation between the client and the server (tells what the server does).
+>```public/javascript/app.js``` defines what modules are being used in the client
 ##### Add a pet to the array, data (in the appropriate controller). See the change on the web page (you need to reload, but not restart). 
+>added wolves (and made consistent plurality)
 ##### How are new items added and deleted through the web page? (i.e. - What functions from the main controller are used in index.html, and what Angular directives allow them to interact with the view?)
+>```index.html``` uses ```mainControl.addData()```, ```mainControl.removeData($index)```, and ```mainControl.itemsInList()```
+> the angular directive ```mainControl.textField``` allows it to interact with the view
 ##### Open navbar.html view. What is its purpose? How would you go about adding links to the navigation bar? 
+> The purpose of ```navbar.html``` is to reference the ```navbar.controller.js``` to make the navbar. To add links you add to the list in the controller.
 ##### Find two instances of use of bootstrap (see above) in either navbar view or index view or both; explain what is formatted. 
+> 1st instance: ```role="presentation"```
+> 2nd instance: ```class="btn btn-primary"```
 
 >Protip: Bootstrap is awesome. Start using it. Seriously. This allows you to do fancy things with styling (CSS) with very little effort. Think back to lab 1. http://getbootstrap.com/components/ <- Regular Bootstrap. https://angular-ui.github.io/bootstrap/ <- Angular Bootstrap. These offer separate functionality and both can be used simultaneously.
 
 ##### Stop the server by pressing Ctrl-C in the terminal, type "grunt test" to run tests. Where are the tests located?
+>grunt just runs karma: ```karma.conf.js```
 
 ## Part #2: modifying the project.
 
