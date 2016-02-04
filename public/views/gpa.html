@@ -13,9 +13,12 @@
 
     <script type="text/javascript" src="javascript/app.js"></script>
     <script type="text/javascript" src="javascript/navbar.controller.js"></script>
+    <script type="text/javascript" src="javascript/gpa.controller.js"></script>
 </head>
-
-<body ng-app="mainApp">
+<body ng-app="mainApp" ng-controller="gpaCtrl as form">
 <div ng-include="'views/navbar.html'" class="text-lowercase"></div>
+<div class="container">
+    <li class="list-group-item" ng-repeat="test in form.data">Class: {{test.name}}, Grade: {{test.grade}}, Credits: {{test.credit}}</li>
+</div>
 </body>
 </html>
