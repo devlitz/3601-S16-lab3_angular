@@ -7,7 +7,7 @@ angular.module('stdComponents').controller('navbarCtrl', function(){
         {text: "Home", link: '/'},
         {text: "About", link: '/about'},
         {text: "Kittens", link: '/kittens'},
-        {text: "404 Page", link: '/wefwrtbertbeb'}
-        {text: "GPACalc", link: '/gpa'},
+        {text: "404 Page", link: '/wefwrtbertbeb'},
+        {text: "GPACalc", link: '/gpa'}
     ];
 });
