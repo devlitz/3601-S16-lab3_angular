@@ -4,9 +4,10 @@
 // angular.module('nameOfModule', ['dependency1', 'dependency2', 'dependency3']);
 // Dependencies will be automatically loaded for the modules that list them as requirements.
 
+angular.module('gpaCalc', []);
 angular.module('stdControllers', []);
 angular.module('stdComponents', []);
-angular.module("mainApp", ['stdControllers', 'stdComponents']);
+angular.module("mainApp", ['stdControllers', 'stdComponents', 'gpaCalc']);
 
 
 
