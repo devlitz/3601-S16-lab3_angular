@@ -18,7 +18,20 @@
 <body ng-app="mainApp" ng-controller="gpaCtrl as form">
 <div ng-include="'views/navbar.html'" class="text-lowercase"></div>
 <div class="container">
-    <li class="list-group-item" ng-repeat="test in form.data">Class: {{test.name}}, Grade: {{test.grade}}, Credits: {{test.credit}}</li>
+    <ul class="list-group">
+        <li class="list-group-item">
+
+            <form ng-submit="form.addData()">
+                <input ng-model="form.nameField" type="text" size="30" placeholder="Course name">
+                <input ng-model="form.gradeField" type="text" size="12" placeholder="Course grade">
+                <input ng-model="form.creditField" type="text" size="12" placeholder="Course credits">
+                <input type="submit" value="submit" class="btn btn-primary">
+                <span class="floatRight">GPA: {{form.gpaCalc()}}</span>
+            </form>
+
+        </li>
+        <li class="list-group-item" ng-repeat="test in form.data">Class: {{test.name}}, Grade: {{test.grade}}, Credits: {{test.credit}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="form.removeData($index)"></span></li>
+    </ul>
 </div>
 </body>
 </html>
