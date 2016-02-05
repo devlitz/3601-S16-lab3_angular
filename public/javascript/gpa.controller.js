@@ -6,6 +6,8 @@ angular.module('gpaCalc').controller('gpaCtrl', function(){
     form.data = [
     ];
 
+    form.color = "color:black";
+
     form.addData = function(){
         if((form.nameField.length >= 1) && (form.gradeField.length = 1) && (form.creditField.length = 1) && checkGrade(form.gradeField.toUpperCase()) && checkInt(parseInt(form.creditField))) {
             form.data.push({name: form.nameField, grade: form.gradeField.toUpperCase(), credit: parseInt(form.creditField)});
@@ -26,7 +28,7 @@ angular.module('gpaCalc').controller('gpaCtrl', function(){
         return !isNaN(value) &&
             parseInt(Number(value)) == value &&
             !isNaN(parseInt(value, 10));
-    }
+    };
 
     function checkGrade(grade) {
         if ((grade == "A") | (grade == "B") | (grade == "C") | (grade == "D") | (grade == "F")) {
@@ -35,7 +37,7 @@ angular.module('gpaCalc').controller('gpaCtrl', function(){
         else {
             return false;
         }
-    }
+    };
 
     form.gpaCalc = function(){
         if(form.data.length >= 1) {
@@ -69,18 +71,19 @@ angular.module('gpaCalc').controller('gpaCtrl', function(){
         else if (grade == "F") {
             return 0;
         }
-    }
+    };
 
     function colorChange(gpa) {
         if (gpa <= 2) {
-            return gpa.toString().fontcolor("red")
+            form.color = "color:red";
         }
         else if (gpa > 2 && gpa <=3) {
-            return gpa.toString().fontcolor("yellow")
+            form.color = "color:orange";
         }
         else if (gpa > 3) {
-            return gpa.toString().fontcolor("green")
+            form.color = "color:green";
         }
-    }
+        return gpa;
+    };
 
 });
